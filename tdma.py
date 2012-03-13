@@ -1,4 +1,4 @@
-import numpy as np
+from numpy import hstack, diag
 import _tdma
 
 def tdma(A, b):
@@ -9,8 +9,8 @@ def tdma(A, b):
     - `A`: Tridiagonal system of equations.
     - `b`: Right hand side of :math:`\mathbf{Ax}=\mathbf{b}`.
     """
-    lower = np.hstack((0, np.diag(A, -1)))
-    middle = np.diag(A)
-    upper = np.hstack((np.diag(A, 1), 0))
+    lower = hstack((0, diag(A, -1)))
+    middle = diag(A)
+    upper = hstack((diag(A, 1), 0))
     return _tdma.tdma(lower, middle, upper, b)
 
