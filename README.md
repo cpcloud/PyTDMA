@@ -16,5 +16,5 @@ PyTDMA stands for [*Python TriDiagonal Matrix Algorithm*](http://en.wikipedia.or
 * `whoami@hostname ~$ python test.py 1000` will run the test solver with a 1000 by 1000 matrix.
 
 ### TODO
-* Allow for C function to take a tridiagonal matrix and the right-hand side of the equation as input. This would free the user from having to get the diagonals themselves.
+* Nothing so far.
 
