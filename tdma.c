@@ -119,9 +119,9 @@ static PyMethodDef tdma_methods[] = {
 
 /* module initialization */
 PyMODINIT_FUNC
-inittdma(void)
+init_tdma(void)
 {
-    (void) Py_InitModule3("tdma",
+    (void) Py_InitModule3("_tdma",
                           tdma_methods,
                           "Tridiagonal matrix solver module.");
     import_array();
