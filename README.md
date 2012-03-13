@@ -1,5 +1,5 @@
 # Welcome to PyTDMA
-PyTDMA stands for [***P**ython **T**ri**D**iagonal **M**atrix **A**lgorithm*](http://en.wikipedia.org/wiki/Tridiagonal_matrix_algorithm). PyTDMA is a short and sweet module with (gasp!) only a single function, designed to do exactly what it says it does.
+PyTDMA stands for [***Py**thon **T**ri**D**iagonal **M**atrix **A**lgorithm*](http://en.wikipedia.org/wiki/Tridiagonal_matrix_algorithm). PyTDMA is a short and sweet module with (gasp!) only a single function, designed to do exactly what it says it does.
 
 ## Motivation
 * It's part of an assignment for a course that I'm taking on computational statistics.
