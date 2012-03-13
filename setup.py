@@ -1,8 +1,8 @@
 from numpy.distutils.core import setup, Extension
-import os, numpy as np
+import numpy as np
 
 name = 'tdma'
-sources = ['{}.c'.format(name)]
+sources = ['%s.c' % name]
 
 include_dirs = [np.get_include()]
 
