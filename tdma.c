@@ -46,7 +46,9 @@ tdma(PyObject* module, PyObject* args)
 
     /* lower diagonal */
     PyObject* a = PyArray_FROM_OTF(ain, NPY_DOUBLE, NPY_IN_ARRAY);
-    if (!a) return NULL;
+    if (!a) {
+        return NULL;
+    }
 
     /* diagonal */
     PyObject* b = PyArray_FROM_OTF(bin, NPY_DOUBLE, NPY_IN_ARRAY);
@@ -81,8 +83,6 @@ tdma(PyObject* module, PyObject* args)
                                    NPY_DOUBLE,
                                    false);
 
-    if (!xout) goto fail;
-
     /* get the raw data of each array */
     double* ad = (double*) PyArray_DATA(a),
         *bd = (double*) PyArray_DATA(b),
@@ -94,21 +94,14 @@ tdma(PyObject* module, PyObject* args)
     solve(dims[0], ad, bd, cd, dd, xd);
 
     /* delete the references to the arrays */
-    Py_XDECREF(a);
-    Py_XDECREF(b);
-    Py_XDECREF(c);
-    Py_XDECREF(d);
+    Py_DECREF(a);
+    Py_DECREF(b);
+    Py_DECREF(c);
+    Py_DECREF(d);
 
     /* increase the reference count of the output array since it is new */
     Py_XINCREF(xout);
     return xout;
-
- fail:
-    Py_XDECREF(a);
-    Py_XDECREF(b);
-    Py_XDECREF(c);
-    Py_XDECREF(d);
-    return NULL;
 }
 
 /* method table for the module */
