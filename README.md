@@ -13,7 +13,7 @@ PyTDMA stands for [***P**ython **T**ri**D**iagonal **M**atrix **A**lgorithm*](ht
 ## Installation/Testing
 * From the cloned Git repository: 
 * `whoami@hostname ~$ python setup.py build_ext --inplace` will result in a file called `tdma.so`--if you're on a non-Mac UNIX. This file is the native extension shared object file.
-* `whoami@hostname ~$ python test.py 1000` will run the test solver with a 1000 by 1000 matrix.
+* `whoami@hostname ~$ ./test.py 1000` will run the test solver with a 1000 by 1000 matrix.
 
 ### TODO
 * Nothing so far.
