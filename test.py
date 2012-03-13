@@ -1,9 +1,12 @@
+# Builtins
 import sys
 from time import time
+
+# numpy/scipy
 from scipy.sparse import spdiags
 import numpy as np
 
-# C code import: see tdma.c
+# solver
 from tdma import tdma
 
 def test_tdma(n):
@@ -19,17 +22,14 @@ def test_tdma(n):
     u = np.diag(A, 1)
 
     l1 = np.hstack((l, 0))
-    l2 = np.hstack((0, l))
-
     u1 = np.hstack((0, u))
-    u2 = np.hstack((u, 0))
     
     x = np.random.randn(n)
     A = spdiags(np.vstack((l1, d, u1)),
                        [-1, 0, 1], n, n).todense()
     rhs = np.dot(A, x)
     tic = time()
-    xhat = tdma(l2, d, u2, rhs)
+    xhat = tdma(A, rhs)
     toc = time() - tic
     return (np.linalg.norm(x - xhat),
             toc * 1000,
