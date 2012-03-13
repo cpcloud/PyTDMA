@@ -6,9 +6,9 @@ PyTDMA stands for [*Python TriDiagonal Matrix Algorithm*](http://en.wikipedia.or
 * It came as a bit of a surprise to me to find that the `spsolve` function in `scipy.sparse` was [*orders of magnitude*](http://en.wikipedia.org/wiki/Order_of_magnitude) slower than this version.
 
 ## Dependencies
-* `[Python](http://www.python.org) >= 2.7`
-* `[NumPy](www.scipy.org) >= 1.5`
-* `[SciPy](www.scipy.org) >= 0.10`, if you want to run `test.py` (it has some convenience functions for creating tridiagonal matrices)
+* [Python](http://www.python.org) >= 2.7
+* [NumPy](www.scipy.org) >= 1.5
+* [SciPy](www.scipy.org) >= 0.10, if you want to run `test.py` (it has some convenience functions for creating tridiagonal matrices)
 
 ## Installation/Testing
 * From the cloned Git repository: 
