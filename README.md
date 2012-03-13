@@ -3,7 +3,7 @@ PyTDMA stands for [***Py**thon **T**ri**D**iagonal **M**atrix **A**lgorithm*](ht
 
 ## Motivation
 * It's part of an assignment for a course that I'm taking on computational statistics.
-* It came as a bit of a surprise to me to find that the `spsolve` function in `scipy.sparse` was [*orders of magnitude*](http://en.wikipedia.org/wiki/Order_of_magnitude) slower than this version.
+* It came as a bit of a surprise to me to find that the [`spsolve`](http://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.spsolve.html#scipy.sparse.linalg.spsolve) function in [`scipy.sparse.linalg`](http://docs.scipy.org/doc/scipy/reference/sparse.linalg.html) was [*orders of magnitude*](http://en.wikipedia.org/wiki/Order_of_magnitude) slower than this version.
 
 ## Dependencies
 * [Python](http://www.python.org) >= 2.7
