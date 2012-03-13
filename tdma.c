@@ -12,6 +12,7 @@ solve(npy_intp n,
 {
     double m;
     npy_intp i;
+
     for (i = 1; i < n; ++i) {
         m = lower[i] / diag[i - 1];
         diag[i] -= m * upper[i - 1];
