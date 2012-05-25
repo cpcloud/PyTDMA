@@ -19,3 +19,4 @@ PyTDMA stands for [**Py**thon **T**ri**D**iagonal **M**atrix **A**lgorithm](http
 
 ### TODO
 * Find a better way to time a function.
+$2*x$
