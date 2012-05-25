@@ -18,4 +18,4 @@ PyTDMA stands for [**Py**thon **T**ri**D**iagonal **M**atrix **A**lgorithm](http
 * `whoami@hostname ~$ ./test.py n` will run the test solver with an `n` by `n` matrix.
 
 ### TODO
-* Nothing so far.
+* Find a better way to time a function.
