@@ -1,12 +1,14 @@
-from numpy.distutils.core import setup, Extension
-import numpy as np
+from distutils.core import setup
+from Cython.Distutils import build_ext
+from Cython.Distutils.extension import Extension
 
-name = '_tdma'
-sources = ['%s.c' % name[1:]]
+extra_compile_args = ['-march=native', '-O3']
+extra_link_args = []
+ext_modules = [Extension('_tdma',
+                         ['tdma.pyx'],
+                         extra_compile_args=extra_compile_args,
+                         extra_link_args=extra_link_args)]
 
-include_dirs = [np.get_include()]
-
-setup(name=name,
-      include_dirs=include_dirs,
-      ext_modules=[Extension(name=name,
-                             sources=sources)])
+setup(name='tdma',
+      cmdclass={'build_ext': build_ext},
+      ext_modules=ext_modules)

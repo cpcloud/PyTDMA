@@ -25,7 +25,7 @@ def test_tdma(n):
 
     x = np.random.randn(n)
     A = scipy.sparse.spdiags(np.vstack((l, d, u)),
-                             [-1, 0, 1], n, n)
+                             [-1, 0, 1], n, n).todense()
 
     b = safe_sparse_dot(A, x)
 
