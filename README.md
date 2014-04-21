@@ -16,6 +16,7 @@ to do exactly what it says it does.
 ## Dependencies
 * [Python](http://www.python.org) >= 2.7
 * [NumPy](http://numpy.scipy.org) >= 1.5
+* [Cython](http://cython.org)
 
 ## Optional Dependencies
 * [SciPy](http://www.scipy.org/) >= 0.10 if you want to run `test.py`
