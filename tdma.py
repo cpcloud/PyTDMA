@@ -3,8 +3,7 @@ import _tdma
 
 
 def tdma(A, b):
-    """Tridiagonal matrix solver using a Python C extension to make it very
-    fast.
+    """Tridiagonal matrix solver.
 
     Parameters
     ----------
