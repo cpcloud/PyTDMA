@@ -1,15 +1,21 @@
-from numpy import hstack, diag, asarray
+import numpy as np
 import _tdma
+
 
 def tdma(A, b):
     """Tridiagonal matrix solver using a Python C extension to make it very
     fast.
 
-    Arguments:
-    - `A`: Tridiagonal system of equations.
-    - `b`: Right hand side of :math:`\mathbf{Ax}=\mathbf{b}`.
+    Parameters
+    ----------
+    A : M x N, array-like
+    b : N, array-like
+
+    Returns
+    -------
+    ret : N, array-like
     """
-    lower = hstack((0, diag(A, -1)))
-    middle = diag(A)
-    upper = hstack((diag(A, 1), 0))
-    return _tdma.tdma(lower, middle, upper, asarray(b).squeeze())
+    lower = np.hstack((0, np.diag(A, -1)))
+    middle = np.diag(A).copy()
+    upper = np.hstack((np.diag(A, 1), 0))
+    return _tdma.tdma(lower, middle, upper, np.asarray(b).squeeze())
