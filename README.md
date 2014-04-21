@@ -7,11 +7,6 @@ to do exactly what it says it does.
 ## Motivation
 * It's part of an assignment for a computational statistics course
   that I took.
-* It came as a bit of a surprise to me to find that the
-  [`spsolve`](http://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.spsolve.html#scipy.sparse.linalg.spsolve)
-  function in
-  [`scipy.sparse.linalg`](http://docs.scipy.org/doc/scipy/reference/sparse.linalg.html)
-  was orders of magnitude slower than this version.
 
 ## Dependencies
 * [Python](http://www.python.org) >= 2.7
