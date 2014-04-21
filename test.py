@@ -1,15 +1,14 @@
 #!/usr/bin/env python
 
 import argparse
-from time import time
+import time
 
 import numpy as np
-import scipy
-
-from sklearn.utils.extmath import safe_sparse_dot, norm
+import scipy.sparse
 
 # solver
 from tdma import tdma
+
 
 def test_tdma(n):
     """Test the tridiagonal matrix solver.
@@ -27,23 +26,20 @@ def test_tdma(n):
     A = scipy.sparse.spdiags(np.vstack((l, d, u)),
                              [-1, 0, 1], n, n).todense()
 
-    b = safe_sparse_dot(A, x)
+    b = A.dot(x)
 
-    tic = time()
+    tic = time.time()
     xhat = tdma(A, b)
-    toc = time() - tic
+    toc = time.time()
 
-    print 'error: {0:.4g}, runtime: {1:.4g} ms, {2:,} elements'.format(norm(x - xhat),
-                                                                       toc * 1000,
-                                                                       n ** 2)
+    fmt = 'error: {0:.4g}, runtime: {1:.4g} ms, {2:,} elements'
+    print(fmt.format(np.linalg.norm(x - xhat), (toc - tic) * 1000, n ** 2))
 
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='PyTDMA testing script.')
-    parser.add_argument('n',
-                        metavar='N',
-                        type=int,
-                        nargs=1,
-                        help='an integer indicating the number of rows and columns of the testing matrix')
+    parser.add_argument('n', type=int, nargs=1,
+                        help='an integer indicating the number of rows and '
+                        'columns of the testing matrix')
     args = parser.parse_args()
     test_tdma(args.n[0])
