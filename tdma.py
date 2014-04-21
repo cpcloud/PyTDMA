@@ -18,4 +18,5 @@ def tdma(A, b):
     lower = np.hstack((0, np.diag(A, -1)))
     middle = np.diag(A).copy()
     upper = np.hstack((np.diag(A, 1), 0))
-    return _tdma.tdma(lower, middle, upper, np.asarray(b).squeeze())
+    return np.asarray(_tdma.tdma(lower, middle, upper,
+                                 np.asarray(b).squeeze()))
